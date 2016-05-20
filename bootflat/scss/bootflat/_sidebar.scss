@@ -1,0 +1,61 @@
+// Variables
+//------------------------------------------------------
+$white: #fff;
+$color: 		      		  #a7b1c2;
+$color-hover:		      	  $white !default;
+$color-active:		      	  $white !default;
+$bg-color:                    #2f4050 !default;
+$bg-color-hover:              #293846 !default;
+
+.sidebar{
+    background: $bg-color;
+}
+.nav-list{
+    >li>a{
+		color: $color;
+		font-weight:700;
+		padding: 14px 20px 14px 14px;
+		
+		&:hover, &:focus{
+		    background-color: $bg-color-hover;
+		    color: $color-hover;
+		}
+		i {margin-right: 4px; }
+    }
+    >li.active{
+		background: $bg-color-hover;
+		border-left: 4px solid #19aa8d;
+		>a{
+		    color: $color-active;
+		}
+    }
+    li a .arrow{
+    	float: right;
+    	&:before{
+    		content: '\f104';
+    	}
+    }
+    .active > a > .arrow:before {
+	  	content: "\f107";
+	}
+	//child
+	li ul li{
+		border-bottom: 0 !important;
+		a{
+			padding: 6px 20px;
+			padding-left: 35px;
+			&:hover{
+				background:none;
+				color: $color-hover;
+			}
+		}
+		&.active{
+			border: none;
+		}
+	}
+	li ul li ul li{
+		padding-left: 24px;
+	}
+}
+
+
