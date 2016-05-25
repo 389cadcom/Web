@@ -1,0 +1,194 @@
+// Variables
+//------------------------------------------------------
+$sidebar-color: 				#585858;
+$sidebar-color-hover:			#1963aa;
+$sidebar-color-active:			#f00;
+
+$sidebar-width: 				220px !default;
+
+$sidebar-bg: 					#f2f2f2;
+$sidebar-bg-hover: 				#fff;
+$sidebar-border: 				#CCC;
+
+$nav-item-size: 				13px;
+$nav-icon-size: 				18px;
+$sidebar-gap: 					20px !default;
+
+$nav-item-height: 				36px;
+
+$sidebar-item-hover:		    #3382af;
+$sidebar-item-border: 			#e5e5e5;
+$sidebar-border-inset: 			rgba(255,255,255,0.6) !default;
+
+.sidebar{
+    position: relative;
+    background: $sidebar-bg;
+    width: $sidebar-width;
+    border-right: 1px solid $sidebar-border;
+    &:before{
+    	content: "";
+		position: fixed;
+		top: 0; bottom: 0;
+		display: block;
+		width: $sidebar-width;
+		z-index: -1;
+		background: $sidebar-bg;
+		 border-right: 1px solid $sidebar-border;
+    }
+	ul{
+		padding:0; margin: 0;
+		li a{
+			display: block;
+			outline: none;
+		}
+		li.active{
+			font-weight: bold;
+		}
+		a:hover, a:focus, a:active{
+			color: $sidebar-color-hover;
+			text-decoration: none;
+		}
+	}
+}
+.sidebar{
+	ul a{
+		padding: 10px 10px;
+		color: $sidebar-color;
+		border-top: 1px solid $sidebar-item-border;
+		box-shadow: 0px 1px 0px $sidebar-border-inset inset;
+		span, i{
+			display: inline-block;
+			&:first-child{
+				font-size: $nav-icon-size;
+				text-align: center;
+				vertical-align: middle;
+				margin-right: 4px;
+			}
+		}
+	}
+	>ul>li>a{
+		&:hover{
+			background: $sidebar-bg-hover;
+			&:before{
+				content: "";
+				position: absolute;
+				top: 0; bottom: 0; left: 0;
+				width: 3px;
+				background: $sidebar-item-hover;
+			}
+		}
+	}
+	> ul>li>ul>li:first-child>a{
+		border-top: 1px solid $sidebar-item-border;
+		box-shadow: 0px 1px 0px $sidebar-border-inset inset;
+	}
+	//TODO ul-line
+	li ul{
+		position: relative;
+		&:before{
+			position: absolute;
+			content: "";
+			top: 0;bottom: 0;
+			left: $sidebar-gap; 
+			width: 1px;
+			z-index: 1;
+			border-left: 1px dotted $sidebar-border;
+		}
+	}
+	//second-line
+	ul ul li{
+		position: relative;
+		background-color: $sidebar-bg-hover;
+		&:last-child>a{
+			border-bottom: none;
+		}
+		&:first-child>a{
+			border-top: 1px dotted $sidebar-border;
+		}
+		a{
+			padding:8px 10px;
+			font-weight: normal;
+			border-top: none;
+			padding-left: 34px;
+			border-bottom: 1px dotted $sidebar-border;
+			
+			[class*='icon-']:first-child{
+				display: none;
+				position: absolute;
+				font-size: 16px;
+				line-height: 12px;
+				width: 12px;
+				height: 12px;
+				background: #fff;
+				z-index: 1;
+				top: 11px;
+				left: $sidebar-gap - 4;
+			}
+			&:hover, &:active{
+		  		[class*='icon-']:first-child{
+					display: inline-block;
+				}
+			}
+			&:before{
+				content: "";
+			    position: absolute;
+			    width: 10px;
+			    left: $sidebar-gap;
+			    top: 16px;
+			    border-top: 1px dotted #9dbdd6;
+			}
+		}
+		
+	}
+	ul ul ul a{
+		margin-left: $sidebar-gap;
+		padding-left: 24px;
+		[class*='icon-']:first-child{
+			display: inline-block;
+			width: 14px;
+			position: static;
+			background-color: transparent;
+			margin-right: 8px;
+		}
+		&:before{display: none;}
+	}
+	ul ul ul ul a{padding-left:44px;}
+	
+	//icon
+	.collapse{ display: none; }
+	.collapse.in{ display: block; }
+	.arrow, .plus-times, .plus-minus{ 
+		float: right;
+	}
+	.fa.arrow:before {
+		content: "\f104"
+	}
+	.active>a>.fa.arrow:before{
+		content: "\f107";
+	}
+	.fa.plus-times:before, .fa.plus-minus:before {
+	    content: "\f067"
+	}
+	.active>a>.fa.plus-minus:before{
+		content: "\f068";
+	}
+	.active>a>.fa.plus-times {
+	    -webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg)
+	}
+}
+
+
+//active-arrow
+.nav-list li.active-arrow>a:after {
+    display: block;
+    content: "";
+    position: absolute!important;
+    right: 0;
+    top: 4px;
+    border: 8px solid transparent;
+    border-width: 14px 10px;
+    border-right-color: #2b7dbc
+}

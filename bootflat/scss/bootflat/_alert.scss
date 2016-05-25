@@ -20,7 +20,12 @@ $alert-link-color:              $mediumgray-light !default;
    * --------------------------------------------------
    */
   .alert {
-
+  		padding: 8px 10px;
+  }
+  .alert.alert-dismissable{
+  	padding-right: 35px;
+  }
+  .alert {
       & h4 {
           margin-bottom: 10px;
           font-weight: bold;

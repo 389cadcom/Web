@@ -1,0 +1,75 @@
+// Global Variables
+//------------------------------------------------------
+$modules:                     () !default;
+
+$experimental:                true !default;
+
+// prefix elements
+$prefix-webkit:               true !global;
+$prefix-moz:                  true !global;
+$prefix-spec:                 true !global;
+
+// color elements
+$white:                       #FFF !default;
+$black:                       #000 !default;
+
+$bluejeans-dark:              #4A89DC !default;
+$bluejeans-light:             #5D9CEC !default;
+
+//primary
+$aqua-dark:                   #3BAFDA !default;
+$aqua-light:                  #4FC1E9 !default;
+
+//info
+$mint-dark:                   #37BC9B !default;
+$mint-light:                  #48CFAD !default;
+
+//success
+$grass-dark:                  #8CC152 !default;
+$grass-light:                 #A0D468 !default;
+
+//warning
+$sunflower-dark:              #F6BB42 !default;
+$sunflower-light:             #FFCE54 !default;
+
+$bittersweet-dark:            #E9573F !default;
+$bittersweet-light:           #FC6E51 !default;
+
+//danger
+$grapefruit-dark:             #DA4453 !default;
+$grapefruit-light:            #ED5565 !default;
+
+$lavender-dark:               #967ADC !default;
+$lavender-light:              #AC92EC !default;
+
+$pinkrose-dark:               #D770AD !default;
+$pinkrose-light:              #EC87C0 !default;
+
+$lightgray-dark:              #E6E9ED !default;
+$lightgray-light:             #F5F7FA !default;
+
+//normal
+$mediumgray-dark:             #AAB2BD !default;
+$mediumgray-light:            #CCD1D9 !default;
+
+$darkgray-dark:               #434A54 !default;
+$darkgray-light:              #656D78 !default;
+
+$normal:                  	  $mediumgray-dark !default;
+$default:               	  $white !default;
+$primary:                 	  $aqua-dark !default;
+$success:                     $grass-dark !default;
+$danger:                  	  $grapefruit-dark !default;
+$warning:                     $sunflower-dark !default;
+$info:                        $mint-dark !default;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.3)) !default; // ~32px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px

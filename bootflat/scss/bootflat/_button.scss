@@ -7,6 +7,7 @@ $button-success:                 $grass-dark !default;
 $button-danger:                  $grapefruit-dark !default;
 $button-warning:                 $sunflower-dark !default;
 $button-info:                    $mint-dark !default;
+$button-white:                   $mediumgray-light !default;
 
 $button-normal-hover:            $mediumgray-light !default;
 $button-default-hover:           $lightgray-dark !default;
@@ -15,6 +16,7 @@ $button-success-hover:           $grass-light !default;
 $button-danger-hover:            $grapefruit-light !default;
 $button-warning-hover:           $sunflower-light !default;
 $button-info-hover:              $mint-light !default;
+$button-white-hover:             $mediumgray-dark !default;
 
 $button-font-color-dark:         $darkgray-dark !default;
 $button-font-color-light:        $white !default;
@@ -76,7 +78,24 @@ $button-shadow:                  inset 0 1px 2px rgba(0, 0, 0, .125) !default;
           text-decoration: underline;
       }
     }
-
+		@at-root &-white {
+        color: $button-font-color-dark;
+				border-color: $button-white !important;
+				
+        &:hover, 
+        &:focus,
+        &:active, 
+        &.active {
+        	  color: $button-font-color-dark;
+        	  background-color: $white;
+        	  border-color: $button-white-hover !important;
+        } 
+        &,
+        &.disabled,
+        &[disabled] {
+            background-color: $button-default;
+        }
+    }
     @at-root &-default {
         color: $button-font-color-dark;
         border-color: $button-normal !important; 
