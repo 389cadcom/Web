@@ -1,6 +1,7 @@
 .no-padding{
 	padding: 0 !important;
 }
+iframe{border: 0; width: 100%; height: 100%;}
 ul,ol{
 	list-style: none;
 	padding: 0;
@@ -12,6 +13,33 @@ ul.list-style{
 ol.list-style{
 	list-style: decimal;
 	padding-left: 20px;
+}
+.table > thead > tr > th{
+	border-bottom: 1px solid #e4eaec;
+	outline: none;
+}
+
+/* 
+.table tr > th, .table tr>td{
+	border-color: #e4eaec !important;
+}
+*/
+
+
+.panel .fixed-table-container{
+	border-top: none;
+	border-bottom: none;
+}
+.panel,.ibox{
+	.table{ margin-bottom: 0 }
+}
+.fixed-table-body{
+//	border-bottom: 1px solid #e4eaec;
+}
+
+//fixed-table-container --> table
+.bootstrap-table .table{
+//	border-bottom: none;
 }
 
 
