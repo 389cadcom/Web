@@ -1,0 +1,286 @@
+$link-hover: 	#ee4834;
+$primary-bg: 	$primary !default;
+$secondary-bg: 	#E9E8E6;
+$success-bg: 	$success !default;
+$danger-bg: 	$danger !default;
+$info-bg: 		$info !default;
+$warning-bg: 	$warning !default;
+$inverse-bg: 	#414141 !default;
+$buy-bg: 		#e8340e !default;
+
+//btn, btn-circle, btn-rounded
+
+
+.btn{
+	font-size: 13px;
+	border-color: transparent;
+	border-radius: 3px;
+	transition: border .25s ease-out, color .25s ease-out, background-color .25s ease-out;
+	
+	&:hover, &:focus{
+		outline: none;
+		color: #fff;
+	}	
+	&:active, &.active{
+		box-shadow: none;
+		&, &:hover, &:focus{
+			outline: none;
+		}
+	}	
+	&.disabled, &[disabled], fieldset[disabled] &{
+		background-color: #D7D7DB;
+		color: rgba(255, 255, 255, .75);
+		opacity: .7;
+		filter: alpha(opacity=70)
+	}
+	&>[class^='icon-']{
+		position: relative;
+		margin: 0 1px;
+		top: 1px;
+	}
+	&.btn-xs> [class^="icon-"] {
+	  top: 0;
+	}
+	&.btn-hg> [class^="icon-"] {
+	  top: 2px;
+	}
+	&.btn-rounded{
+		border-radius: 50px;
+	}
+	&.btn-circle{
+		width: 30px;
+	    height: 30px;
+	    padding: 6px 0;
+	    border-radius: 15px;
+	    font-size: 12px;
+	}
+}
+
+.btn-primary{
+	@include button-variant(#fff,  $primary-bg, $primary-bg);
+}
+.btn-primary-outline{
+	@include button-ouline($primary-bg);
+}
+.btn-secondary{
+	@include button-variant(#888,  $secondary-bg, $secondary-bg);
+}
+.btn-secondary-outline{
+	@include button-ouline($secondary-bg);
+}
+.btn-success{
+	@include button-variant(#fff,  $success-bg, $success-bg);
+}
+.btn-success-outline{
+	@include button-ouline($success-bg);
+}
+.btn-info{
+	@include button-variant(#fff,  $info-bg, $info-bg);
+}
+.btn-info-outline{
+	@include button-ouline($info-bg);
+}
+.btn-warning{
+	@include button-variant(#fff,  $warning-bg, $warning-bg);
+}
+.btn-warning-outline{
+	@include button-ouline($warning-bg);
+}
+.btn-danger{
+	@include button-variant(#fff,  $danger-bg, $danger-bg);
+}
+.btn-danger-outline{
+	@include button-ouline($danger-bg);
+}
+.btn-inverse{
+	@include button-variant(#fff,  $inverse-bg, $inverse-bg);
+}
+.btn-inverse-outline{
+	@include button-ouline($inverse-bg);
+}
+.btn-xs{
+	@include button-size(5px, 10px, 12px, 1.2);
+}
+.btn-sm{
+	@include button-size(6px, 15px, 13px, 1.385);
+}
+.btn-lg{
+	@include button-size(10px, 20px, 15px, 1.435);
+	&.btn-circle{
+		width: 50px;
+	    height: 50px;
+	    padding: 10px 16px;
+	    border-radius: 25px;
+	    font-size: 18px;
+	    line-height: 1.33;
+	}
+}
+.btn-hg{
+	@include button-size(13px, 26px, 18px, 1.227);
+}
+.btn-wide{
+	padding-left: 25px; padding-right: 25px; min-width: 120px;
+}
+.btn-wide-sm{
+	padding-left: 15px; padding-right: 15px; min-width: 90px;
+}
+
+.btn-buy{
+	color: #fff;
+	background-color: $buy-bg;
+	position: relative;
+	transition: all .3s;
+	overflow: hidden;
+	backface-visibility: hidden;
+	
+	&:before{
+		position: absolute;
+		top: -100%;
+		left: 0;
+		font-size: 200%;
+		font-family: 'nubia';
+		content: "\e9bd";
+		width: 100%;
+		height: 100%;
+		transition: all .3s;
+	}
+	span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		transition: all .3s;
+		backface-visibility: hidden;
+	}
+	&:hover{
+		&:before{top: 0;}
+		span{
+			transform: translateY(200%);
+		}
+	}
+	&:active{
+		outline: none;
+		background-color: darken($buy-bg, 10%);
+		&:before{
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
+}
+.btn-link{
+	color: #505554;
+	padding-right: 0px!important;
+	padding-left: 0px!important;
+	border-radius: 0px;
+	border-bottom: 1px solid rgba(0, 0, 0, .15);
+	margin-left: 10px;
+	margin-right: 10px;
+	
+	&:hover, &:focus{
+		color: $link-hover;
+		text-decoration: none;
+		border-bottom-color: #e95f46;
+		&>[class^='icon-']{
+			color: $link-hover;
+		}
+	}
+	&.disabled, &[disabled], fieldset[disabled] & {
+		&, &:hover, &:focus{
+			color: #adadad;
+			text-decoration: none;
+		}
+	}
+}
+.btn-link-inverse{
+	color: #fff;
+	&:hover, &:focus{
+		color:$link-hover;
+		border-bottom-color: #f45441;
+	}
+}
+
+.btn-block {
+  white-space: normal;
+}
+.btn-embossed{
+	background-clip: padding-box;
+	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15) inset, 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+	&:active, &.active{
+		box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15) inset;
+	} 
+}
+
+//社交按钮颜色
+.btn-social-email {
+  color: #ffffff;
+  background-color: #adadad;
+  &:hover, &:focus{
+  	background-color: #B6B6B6;
+  	border-color: #B6B6B6;
+  }
+  &:active, &.active{
+  	background: #666363;
+  	border-color: #505554;
+  }
+}
+.btn-social-linkedin {
+  color: #ffffff;
+  background-color: #367bb4;
+  &:hover, &:focus{
+  	background-color: #338ec4;
+  }
+  &:active, &.active{
+  	background-color: #00619a;
+  }
+}
+.btn-social-weibo {
+  color: #ffffff;
+  background-color: #eb7350;
+  &:hover, &:focus{
+  	background-color: #ef7a58;
+  }
+  &:active, &.active{
+  	background-color: #e5613b;
+  }
+}
+.btn-social-google {
+  color: #ffffff;
+  background-color: #d75a49;
+  border-color: #d75a49;
+  &:hover, &:focus{
+  	background-color: #e46453;
+  }
+  &:active, &.active{
+  	background-color: #c84a39;
+  }
+}
+.btn-social-wechat {
+  color: #ffffff;
+  background-color: #61c032;
+  &:hover, &:focus{
+  	background-color: #64ce30;
+  }
+  &:active, &.active{
+  	background-color: #5aac31;
+  }
+}
+.btn-social-facebook {
+  color: #ffffff;
+  background-color: #4e69a1;
+  border-color: #4e69a1;
+  &:hover, &:focus{
+  	background-color: #4a6fbd;
+  }
+  &:active, &.active{
+  	background-color: #28407d;
+  }
+}
+.btn-social-twitter {
+  color: #ffffff;
+  background-color: #0cc5f6;
+  border-color: #00bdef;
+  &:hover, &:focus{
+  	background-color: #18ccfb;
+  }
+  &:active, &.active{
+  	background-color: #00a1cb;
+  }
+}

@@ -1,0 +1,91 @@
+// Variables
+//------------------------------------------------------
+$list-primary:                                 $aqua-light !default;
+$list-info:                                    $mint-light !default;
+$list-warning:                                 $sunflower-light !default;
+$list-success:                                 $grass-light !default;
+$list-danger:                                  $grapefruit-light !default;
+$list-primary-hover:                           $aqua-dark !default;
+$list-info-hover:                              $mint-dark !default;
+$list-warning-hover:                           $sunflower-dark !default;
+$list-success-hover:                           $grass-dark !default;
+$list-danger-hover:                            $grapefruit-dark !default;
+
+$list-border-color:                            $lightgray-dark !default;
+$list-background-color:                        $white !default;
+$list-font-color:                              $darkgray-dark !default;
+$list-font-color-hover:                        $mediumgray-dark !default;
+
+$list-item-background-color:                   $lightgray-dark !default;
+
+$list-radius:                                  4px !default;
+$list-shadow:                                  0 1px 2px rgba(0, 0, 0, .2) !default;
+
+
+.list-group {
+	border-radius: $list-radius;
+	.no-padding &{
+		margin-bottom: 0;
+		
+		border-left: none;
+    border-right: none;
+    border-bottom: none;
+    @at-root &-item {
+    	border-color: transparent;
+    	border-top-color: $list-border-color;
+    	&:first-child{
+    		border-radius: 0;
+    	}
+    }
+	}
+	
+	@at-root &-item {
+		border-color: $list-border-color;
+		&:first-child {
+			border-top: none;
+		}
+		@at-root &-heading {
+			color: $list-font-color;
+		}
+	}
+}
+a.list-group-item {
+	color: $list-font-color;
+	& .list-group-item-heading {
+		font-size: 16px;
+		color: $list-font-color;
+	}
+	&:hover, &:focus {
+		background-color: $list-item-background-color;
+	}
+	&.active, &.active:hover, &.active:focus {
+		background-color: $list-primary;
+		border-color: $list-primary;
+	}
+	&.active .list-group-item-text,
+	&.active:hover .list-group-item-text,
+	&.active:focus .list-group-item-text {
+		color: $list-background-color;
+	}
+}
+
+
+
+.list-group-item {
+	&.list-group-item-primary{
+		@include list-veriant($list-primary, $list-primary-hover)
+	}
+	&.list-group-item-success{
+		@include list-veriant($list-success, $list-success-hover)
+	}
+	&.list-group-item-info{
+		@include list-veriant($list-info, $list-info-hover)
+	}
+	&.list-group-item-warning{
+		@include list-veriant($list-warning, $list-warning-hover)
+	}
+	&.list-group-item-danger{
+		@include list-veriant($list-danger, $list-danger-hover)
+	}
+}
+

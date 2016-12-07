@@ -1,0 +1,55 @@
+$alert-primary:                 $aqua-light !default;
+$alert-success:                 $grass-light !default;
+$alert-danger:                  $grapefruit-light !default;
+$alert-warning:                 $sunflower-light !default;
+
+$alert-close-color:             $black !default;
+$alert-link-color:              $mediumgray-light !default;
+
+.alert {
+	h4 {
+		margin-bottom: 12px;
+		font-weight: bold;
+	}
+	.close {
+		color: $alert-close-color;
+		&:focus, &:active{
+			outline: none;
+		}
+	}
+	& &-link {
+		cursor: pointer;
+		text-decoration: underline;
+		@include opacity($opacity: 80, $filter: true);
+		
+		&:hover, &:focus {
+			@include opacity($opacity: 45, $filter: true);
+		}
+	}
+	.btn-link {
+		color: $alert-close-color;
+		@include opacity($opacity: 80, $filter: true);
+		
+		&:hover, &:focus{
+			text-decoration: none;
+			@include opacity($opacity: 40, $filter: true);
+		}
+	}
+	
+	&-info {
+		background-color: lighten($alert-primary, 12%);
+		border-color: $alert-primary;
+	}
+	&-warning {
+		background-color: lighten($alert-warning, 12%);
+		border-color: $alert-warning;
+	}
+	&-danger {
+		background-color: lighten($alert-danger, 12%);
+		border-color: $alert-danger;
+	}
+	&-success {
+		background-color: lighten($alert-success, 12%);
+		border-color: $alert-success;
+	}
+}

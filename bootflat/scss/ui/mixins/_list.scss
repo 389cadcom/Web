@@ -1,0 +1,10 @@
+@mixin list-veriant($color, $color-hover) {
+	color: darken($color, 30%);
+	border-color: transparent;
+	background-color: $color;
+
+   &:hover, &:focus {
+     color: #fff;
+     background-color: $color-hover;
+   }
+}

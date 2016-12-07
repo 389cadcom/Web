@@ -1,0 +1,61 @@
+$button-normal: $mediumgray-dark !default;
+$button-default: $white !default;
+$button-primary: $aqua-dark !default;
+$button-success: $grass-dark !default;
+$button-danger: $grapefruit-dark !default;
+$button-warning: $sunflower-dark !default;
+$button-info: $mint-dark !default;
+
+
+.btn-group {
+	.btn {
+		border-left-color: darken($button-normal, 5%);
+	}
+	@at-root &.open .btn-default.dropdown-toggle,
+	.btn-default:focus,
+	.btn-default:active,
+	.btn-default.active {
+		color: $button-default;
+	}
+	.btn-primary {
+		border-left-color: darken($button-primary, 6%);
+	}
+	.btn-success {
+		border-left-color: darken($button-success, 8%);
+	}
+	.btn-warning {
+		border-left-color: darken($button-warning, 12%);
+	}
+	.btn-danger {
+		border-left-color: $button-danger;
+	}
+	.btn-info {
+		border-left-color: darken($button-info, 5%);
+	}
+	.btn:first-child {
+		border-left-color: transparent;
+	}
+}
+.btn-group-vertical {
+	.btn {
+		border-top-color: darken($button-normal, 7%) !important;
+	}
+	.btn-primary {
+		border-top-color: darken($button-primary, 7%) !important;
+	}
+	.btn-success {
+		border-top-color: darken($button-success, 8%) !important;
+	}
+	.btn-warning {
+		border-top-color: darken($button-warning, 12%) !important;
+	}
+	.btn-danger {
+		border-top-color: darken($button-danger, 1%) !important;
+	}
+	.btn-info {
+		border-top-color: darken($button-info, 7%) !important;
+	}
+	.btn:not(.btn-default):first-child {
+		border-top: none;
+	}
+}

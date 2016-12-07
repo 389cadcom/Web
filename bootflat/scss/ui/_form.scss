@@ -17,44 +17,24 @@ $form-placeholder-font-color:      $lightgray-dark !default;
 
 $form-disabled-color:              $lightgray-dark !default;
 
-$search-query-value:               8px !default;
+$search-query-value:               17px !default;
 
-$search-icon-width:                24px !default;
+$search-icon-width:                30px !default;
 $search-icon-line-height:          30px !default;          
 
 // Exports
 //------------------------------------------------------
 
 @include exports("form") {
-	legend{
-		font-weight: bold;
-		margin-bottom: 12px;
-	}
+
   /**
    * form
    * --------------------------------------------------
    */
-  
-  .form-group{
-  	  margin-bottom: 10px;
-  }
-  .form-horizontal{
-  	  label{
-  	  	text-align: right;
-  	  	font-weight: 500;
-  	  	min-width: 120px;
-  	  }
-  		[class*=col-]{
-  			  padding-right: 0;
-  		}
-  		.help-block{
-  			margin-top: 7px;
-  		}
-  }
   .form-control {
       color: $form-font-color;
-			padding:6px 8px;
-			
+      border-color: $form-normal;
+
       &,
       &:focus {
           @include box-shadow($value: none);

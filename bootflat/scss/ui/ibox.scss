@@ -19,6 +19,7 @@ $ibox-background-color: 				$white !default;
 		background-color: $ibox-background-color;
 		min-height: 42px;
 		padding: 10px 15px;
+		margin-bottom: -1px;
 		border-style: solid;
 		border-width: 4px 1px 1px;
 		border-color: $ibox-border-color;
@@ -53,9 +54,8 @@ $ibox-background-color: 				$white !default;
 	&-content {
 		clear: both;
 		background-color: $ibox-background-color;
-		padding: 10px 12px;
+		padding: 10px 20px;
 		border: 1px solid $ibox-border-color;
-		border-top: none;
 	}
 	&.collapsed {
 		.ibox-content {
