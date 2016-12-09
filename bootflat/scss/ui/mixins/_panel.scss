@@ -1,0 +1,8 @@
+@mixin panel-variant($color, $bg){
+	border-color: $bg;
+	> .panel-heading {
+		color: $color;
+		background-color: $bg;
+		border-color: $bg;
+	}
+}

@@ -1,0 +1,95 @@
+// Variables
+//------------------------------------------------------
+$white: #fff;
+$color: 		      		  #a7b1c2;
+
+$sidebar-width: 			  220px !default;
+$border-color: 			  	  rgba(0, 0, 0, 0.15)!default;
+$border-color-inset: 		  rgba(255, 255, 255, 0.05) !default;
+
+$bg-color:                    #2f4050 !default;
+$bg-color-hover:              #293846 !default;
+
+.sidebar{
+    position: relative;
+    background: $bg-color;
+    width: $sidebar-width;
+    border-bottom: 1px solid $border-color;
+    &:before{
+    	content: "";
+		position: fixed;
+		top: 0; bottom: 0;
+		display: block;
+		width: $sidebar-width;
+		z-index: -1;
+		background: $bg-color;
+    }
+	ul{
+		padding:0; margin: 0;
+		li a{
+			display: block;
+			font-weight: bold;
+			outline: none;
+		}
+		a:hover, a:focus, a:active{
+			color: $white;
+			text-decoration: none;
+			background: none;
+		}
+	}
+}
+.sidebar{
+	ul a{
+		padding: 10px 20px;
+		color: $color;
+		border-top: 1px solid $border-color;
+		box-shadow: 0px 1px 0px $border-color-inset inset;
+		&:hover{
+			background: $bg-color-hover;
+		}
+		span, i{
+			margin-right: 4px;
+		}
+	}
+	ul>li>ul>li:first-child a{
+		border-top: 1px solid $border-color;
+		box-shadow: 0px 1px 0px $border-color-inset inset;
+	}
+	ul ul a{
+		font-weight: normal;
+		border-top: none;
+		box-shadow: none;
+		padding-left:40px;
+		background-color: $bg-color-hover;
+		&:hover, &:active{
+	  		//background-color: rgba(255, 255, 255, 0.1);
+		}
+	}
+	ul ul ul a{padding-left:60px;}
+	ul ul ul ul a{padding-left:80px;}
+	
+	//icon
+	.collapse{ display: none; }
+	.collapse.in{ display: block; }
+	.arrow, .plus-times, .plus-minus{ 
+		float: right;
+	}
+	.fa.arrow:before {
+		content: "\f104"
+	}
+	.active>a>.fa.arrow:before{
+		content: "\f107";
+	}
+	.fa.plus-times:before, .fa.plus-minus:before {
+	    content: "\f067"
+	}
+	.active>a>.fa.plus-minus:before{
+		content: "\f068";
+	}
+	.active>a>.fa.plus-times {
+	    -webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg)
+	}
+}

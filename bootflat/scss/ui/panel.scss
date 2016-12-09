@@ -1,0 +1,114 @@
+// Variables
+//------------------------------------------------------
+$panel-normal:                  $lightgray-dark !default;
+$panel-default:                 $white !default;
+$panel-primary:                 $aqua-dark !default;
+$panel-success:                 $grass-dark !default;
+$panel-danger:                  $grapefruit-dark !default;
+$panel-warning:                 $sunflower-dark !default;
+$panel-info:                    $mint-dark !default;
+
+$panel-font-color:              $darkgray-dark !default;
+
+$panel-background-color:        $white !default;
+$panel-shadow:                  0 1px 2px rgba(0, 0, 0, .2) !default;
+$panel-radius:                  4px !default;
+
+.panel {
+	background-color: $panel-background-color;
+//	border: none;
+//	box-shadow: $panel-shadow;
+	
+	& .list-group {
+		box-shadow: none;
+		.list-group-item:first-child{
+			border-top: 1px solid $panel-normal;
+		}
+	}
+	&-title {
+		font-size: 14px;
+		color: $panel-font-color;
+		font-weight: normal;
+	}
+	&-footer {
+		background-color: $panel-normal;
+		border-top-color: $panel-normal;
+	}
+	
+	&-default {
+		@include panel-variant($panel-font-color, $panel-normal)
+	}
+	
+	&-primary {
+		@include panel-variant($panel-default, $panel-primary)
+	}
+	&-success {
+		@include panel-variant($panel-default, $panel-success)
+	}
+	&-info {
+		@include panel-variant($panel-default, $panel-info)
+	}
+	&-warning {
+		@include panel-variant($panel-default, $panel-warning)
+	}
+	&-danger {
+		@include panel-variant($panel-default, $panel-danger)
+	}
+	
+	@at-root &-primary > &-heading > &-title,
+	&-success > &-heading > &-title,
+	&-info > &-heading > &-title,
+	&-warning > &-heading > &-title,
+	&-danger > &-heading > &-title {
+		color: $panel-default;
+	}
+	
+	& > .table:first-child > thead:first-child > tr:first-child td:first-child,
+	& > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+	& > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+	& > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+	& > .table:first-child > thead:first-child > tr:first-child th:first-child,
+	& > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+	& > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+	& > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+		@include radius($type: border-radius, $value: $panel-radius 0 0 0);
+	}
+	& > .table:first-child > thead:first-child > tr:first-child td:last-child,
+	& > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+	& > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+	& > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+	& > .table:first-child > thead:first-child > tr:first-child th:last-child,
+	& > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+	& > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+	& > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+		@include radius($type: border-radius, $value: 0 $panel-radius 0 0);
+	}
+	& > .table:last-child,
+	& > .table-responsive:last-child > .table:last-child {
+		@include radius($type: border-radius, $value: 0 0 $panel-radius $panel-radius);
+	}
+	& > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+	& > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+	& > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+	& > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+	& > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+	& > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+	& > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+	& > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+		@include radius($type: border-radius, $value: 0 0 0 $panel-radius);
+	}
+	& > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+	& > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+	& > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+	& > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+	& > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+	& > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+	& > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+	& > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+		@include radius($type: border-radius, $value: 0 0 $panel-radius 0);
+	}
+	& > &-body + .table,
+	& > &-body + .table-responsive {
+		border-top-color: $panel-normal;
+	}
+}

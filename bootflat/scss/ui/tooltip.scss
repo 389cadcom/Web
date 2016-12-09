@@ -1,0 +1,27 @@
+// Variables
+$tooltip-bg:               $darkgray-dark !default;
+$tooltip-font-color:       $white !default;
+
+.tooltip {
+	@at-root &-inner {
+		color: $tooltip-font-color;
+		background-color: $tooltip-bg;
+	}
+	//TODO caret
+	&.top &-arrow,
+	&.top-left &-arrow,
+	&.top-right &-arrow {
+		border-top-color: $tooltip-bg;
+	}
+	&.right &-arrow {
+		border-right-color: $tooltip-bg;
+	}
+	&.left &-arrow {
+		border-left-color: $tooltip-bg;
+	}
+	&.bottom &-arrow,
+	&.bottom-left &-arrow,
+	&.bottom-right &-arrow {
+		border-bottom-color: $tooltip-bg;
+	}
+}

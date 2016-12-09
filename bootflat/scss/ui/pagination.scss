@@ -1,0 +1,70 @@
+// Variables
+//------------------------------------------------------
+$pagination-bg:                  		$white !default;
+$pagination-bg-hover:            		$mediumgray-light !default;
+$pagination-border:            			$mediumgray-dark !default;
+$pagination-bg-active:           		$primary !default;
+
+$pagination-font-color:             $darkgray-dark !default;
+$pagination-font-color-hover:       $white !default;
+$pagination-font-color-disabled:    $lightgray-dark !default;
+
+$paper-background-color:            $aqua-dark !default;
+$paper-background-color-hover:      $aqua-light !default;
+
+$paper-font-color:                  $white !default;
+$paper-font-color-disabled:         $lightgray-dark !default;
+
+.pagination {
+	> li > a,
+	> li > span {
+		color: $pagination-font-color;
+		background-color: $pagination-bg;
+		border-color: $pagination-border;
+		
+		&:hover, &:focus{
+			color: $pagination-font-color-hover;
+			background-color: $pagination-bg-hover;
+			border-color: $pagination-border;
+		}
+	}
+	> .active > a,
+	> .active > span{
+		&, &:hover, &:focus{
+			color: $pagination-font-color-hover;
+			background-color: $pagination-bg-active;
+		}
+	}
+	> .disabled > a,
+	> .disabled > span{
+		&, &:hover, &:focus{
+			color: $pagination-font-color-disabled;
+			background-color: $pagination-bg;
+			border-color: $pagination-border;
+		}
+	}
+}
+
+
+.pager {
+	li > a,
+	li > span {
+	  color: $paper-font-color;
+	  background-color: $paper-background-color;
+	  border-color: $paper-background-color;
+	  
+	  &:hover, &:focus{
+	  	background-color: $paper-background-color-hover;
+	  	border-color: $paper-background-color-hover; 
+	  }
+	}
+
+	.disabled > a,
+	.disabled > a:hover,
+	.disabled > a:focus,
+	.disabled > span {
+	  color: $paper-font-color-disabled;
+	  background-color: $paper-font-color;
+	  border-color: $paper-font-color-disabled;
+	}
+}

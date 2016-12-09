@@ -1,0 +1,50 @@
+// Variables
+//------------------------------------------------------
+$progress-primary:                 $aqua-dark !default;
+$progress-success:                 $grass-dark !default;
+$progress-danger:                  $grapefruit-dark !default;
+$progress-warning:                 $sunflower-dark !default;
+$progress-info:                    $mint-dark !default;
+
+$progress-background-color:        $lightgray-dark !default;
+
+
+.progress {
+	background-color: $progress-background-color;
+	box-shadow: inset 0 1px 2px rgba(100, 100, 100, 0.15);
+	margin-bottom: 10px;
+	
+	&-bar {
+		background-color: $progress-primary;
+		box-shadow: none;
+	}
+	&-bar-success {
+		background-color: $progress-success;
+	}
+	&-bar-info {
+		background-color: $progress-info;
+	}
+	&-bar-warning {
+		background-color: $progress-warning;
+	}
+	&-bar-danger {
+		background-color: $progress-danger;
+	}
+	&.progress-sm, &.progress-mini{
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+	&.progress-sm{
+		height: 12px;
+		border-radius: 32px;
+	}
+	&.progress-mini{
+		height: 6px;
+	}
+}
+
+//TODO
+.progress-trackerbar{
+	margin-top: 50px;
+	margin-bottom: 100px;	
+}
