@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="bootflat/css/bootflat.css" />
+</head>
+<body>
+   
+<div class="container">    
+    <button class="btn btn-primary" data-toggle="modal" data-target="#demo">modal</button>
+</div>
+<div class="modal fade" id="demo"  tabindex="1" role="dialog" >
+    <!--modal-lg, modal-sm  900 600 300-->
+    <div class="modal-dialog modal-lg modal-inverse">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">video</h4>
+            </div>
+            <div class="modal-body">
+                modal-body
+            </div>
+            <!--<div class="modal-footer">
+                modal-footer
+            </div>-->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="bootstrap/js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
+<script>
+$(function(){
+    $("[data-toggle=tooltip]").tooltip({
+        placement: 'bottom',
+        title: 'title'
+    });
+    
+     $("#demo").modal({
+         keyboard: true
+     })
+})
+</script>
+</html>

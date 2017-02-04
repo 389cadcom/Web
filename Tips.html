@@ -11,7 +11,7 @@
 <div class="container">    
     <div class="col-sm-3 col-sm-offset-3">    
     <button type="button" class="btn btn-info btn-block" data-toggle="tooltip">Tooltip on left</button>
-    <a href="#" data-toggle="tooltip">请悬停在我的上面</a>
+    <a href="#" data-toggle="tooltip">Tip--请悬停在我的上面</a>
     </div>
     <div class="col-sm-7">
         <div href="#" class="alert alert-danger">
@@ -19,22 +19,43 @@
             <b>Alert</b>
         </div>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <button type="button" class="btn btn-primary show" 
             data-trigger = "hover"
             data-toggle="popover" 
             data-placement="right" data-container="body" 
             data-content="左侧的 Popover 中的一些内容">
-                        按钮
+            Popover
         </button>
     </div>
+    <div class="col-sm-6">
+        <p class="popover-options">
+            <a href="#" type="button" class="btn btn-warning" title="<h2>Title</h2>"
+               data-html="true" 
+               data-container="body" data-toggle="popover" data-content="
+             <h4>Popover 中的一些内容 —— options 方法</h4>">
+                Popover
+            </a>
+        </p>
+    </div>
     <div class="col-sm-12">
-        <button type="button" class="btn btn-primary" data-target="#demo" data-toggle = "collapse">collapse</button>
+        <button type="button" class="btn btn-primary" data-target="#demo" data-toggle = "collapse">
+            collapse
+        </button>
         <div id="demo" class="collapse">
             <p>collapse插件</p>
         </div>
     </div>
-    
+    <div class="col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading" data-toggle = "collapse" data-target="#demo1" >面板</div>
+            <div class="panel-collapse collapse in" id="demo1">
+                <div class="panel-body">
+                    <p>body</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <script type="text/javascript" src="bootstrap/js/jquery-1.8.3.min.js" ></script>
@@ -46,7 +67,7 @@ $(function(){
         title: 'title'
     });
     
-     $(".show").popover('show')
+     $("[data-toggle=popover]").popover()
 })
 </script>
 </html>
